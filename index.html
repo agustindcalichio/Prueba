@@ -14,7 +14,7 @@ $(document).ready(function() {
 	$("#login").submit(function(){
 		/*var datosFormulario={usuario:$("#usuario").val(),
 							   contra:$("#contra").val()}*/
-		var datoFormulario=$(this).serialize();
+		var datosFormulario=$(this).serialize();
 	$.get("login.php",datosFormulario, procesarDatos);
 	return false;
 	});
