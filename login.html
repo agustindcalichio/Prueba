@@ -4,33 +4,29 @@
 <meta charset="UTF-8">
 <title>Noticias varias</title>
 <link href="externa.css" rel="stylesheet">
-<style>
-	
-</style>
 <script src="/tutorial/jquery-3.7.1.js"></script>
-<script>
-
-$(document).ready(function() {
-	$("#login").submit(function(){
+	<script>
+		$(document).ready(function() {
+			$("#login").submit(function(){
 		/*var datosFormulario={usuario:$("#usuario").val(),
 							   contra:$("#contra").val()}*/
-		var datosFormulario=$(this).serialize();
-	$.get("login.php",datosFormulario, procesarDatos).error(ProcesarError);
-	return false;
-	});
-	function procesarDatos(datos_devueltos){
-		if(datos_devueltos=="autorizado"){
-			$("#contenidos_externos").html("<p> Usuario correcto.Bienvenido <p>");
-		}else{
-			$("#contenidos_externos").html("<p> Usuario icorrecto.Intentalo de nuevo <p>");
-		}
-	}
-	function ProcesarError(){
-		var msgError="Ooops,ha ocurrido un problema";
-		$("#contenidos_externos").html("<p>" + msgError + "</p>");
-	}	
-}); 
-</script>
+				var datosFormulario=$(this).serialize();
+			$.get("login.php",datosFormulario, procesarDatos).error(ProcesarError);
+			return false;
+			});
+			function procesarDatos(datos_devueltos){
+				if(datos_devueltos=="autorizado"){
+					$("#contenidos_externos").html("<p> Usuario correcto.Bienvenido <p>");
+				}else{
+					$("#contenidos_externos").html("<p> Usuario icorrecto.Intentalo de nuevo <p>");
+				}
+			}
+			function ProcesarError(){
+				var msgError="Ooops,ha ocurrido un problema";
+				$("#contenidos_externos").html("<p>" + msgError + "</p>");
+			}	
+		}); 
+	</script>
 </head>
 <body>
 
